@@ -23,8 +23,10 @@ real	9m32.918s
 user	6m30.474s  
 
 sys	0m38.940s  
+COPY train FROM '/home/magdalena/Pobrane/Train_prepared.csv' DELIMITER ',' CSV;
+ CREATE TABLE train (Id integer PRIMARY KEY,Title varchar, Body varchar,Tags varchar);
 
-
+czas ok 40 min
 # Zadanie 1b
 ```
 db.train.count()
