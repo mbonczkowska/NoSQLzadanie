@@ -16,7 +16,7 @@ sys	0m8.582s
 ## version 2.8.0-rc0
 
 ```
-time mongoimport -d dataBase -c train --type csv --file trainProper.csv --headerline
+time mongoimport -d dataBase -c train --type csv --file Train_prepared.csv --headerline
 ```
 real	9m32.918s  
 
