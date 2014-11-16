@@ -32,3 +32,28 @@ czas ok 40 min
 db.train.count()
 ```
 6034195
+#Zadanie 2
+```
+var conn = new Mongo();
+var db = conn.getDB('dataBase');
+var dataBase = db.train.find();
+var count = 0;
+
+dataBase.forEach(function (record) {
+	if (typeof record.tags === 'string') {
+		var tableOfTags = record.tags.split(' ');
+
+		db.save.update(
+			{_id: record._id},
+			{$set: {tags: tableOfTags}}
+		)
+	}
+});
+````
+real	3m25.169s  
+
+user	0m46.436s  
+
+sys	0m3.719s  
+
+
