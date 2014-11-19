@@ -17,6 +17,8 @@
 ````
 Ilość rekordów: 1926366  
 
+### Import
+![GitHub Logo](/images/importWeather.png)
 
 ###Agregacja 1  
 10 najczęściej występujących temperatur, gdy wiatr nie przekraczał 1 m/s
