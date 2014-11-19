@@ -73,8 +73,10 @@ user	0m46.436s
 sys	0m3.719s  
 
 
-
 #Zadanie 1d
+
+Dane to lista kodów pocztowych z lokalizacją i dzielnicą w Australii.
+
 ````
 time mongoimport -d dataBase -c geoaus --type csv --file AustralianPostCodes.csv --headerline
 ```
@@ -92,6 +94,7 @@ Przykładowy rekord:
 	"suburb" : "BARTON",
 	"location" : {
 		"type" : "Point",
+		"postcode" : 221,
 		"coordinates" : [
 			149.095065,
 			-35.201372
@@ -99,4 +102,38 @@ Przykładowy rekord:
 	}
 }
 ````
+W danych znajdowało się kilkadziesiąt pustych lokacji
+````
+db.geoaus.remove({"location.coordinates":[undefined,undefined]})
+WriteResult({ "nRemoved" : 70 })
+````
+I dzielnic
+````
+db.geoaus.remove({suburb:""})
+WriteResult({ "nRemoved" : 1 })
+````
+Po ich usunięciu ilość rekordów wynosi: 16009  
+
+
+Nazwy dzielnic w promieniu 20 km dla których kody pocztowe się zmieniają
+````
+db.geoaus.find(    
+	{ location: 
+		{$nearSphere:                      
+			{$geometry:
+				{ "type" : "Point","coordinates" : [ 131.068332, -12.477758 ] },$maxDistance:20000                         }                   
+		}             
+	},{_id:0,location:0,postcode:0}
+)
+````
+Wynik:
+````
+{
+{ "suburb" : "TI TREE" }
+{ "suburb" : "ULURU" }
+{ "suburb" : "KINTORE" }
+{ "suburb" : "KARAMA" }
+}
+````
 ![GitHub Logo](/images/importAus.png)
+
