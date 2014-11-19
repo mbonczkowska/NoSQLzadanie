@@ -1,6 +1,6 @@
 
-## Zadanie 1a
-
+## Zadanie 1a  
+Najpierw należy pozbyć się znaków nowej linii.
 ```
 cat Train.csv | tr "\n" " " | tr "\r" "\n" | head -n 6034196 > Train_prepared.csv
 ```
@@ -18,11 +18,12 @@ sys	0m8.582s
 ```
 time mongoimport -d dataBase -c train --type csv --file Train_prepared.csv --headerline
 ```
-real	9m32.918s  
+real	17m46.795s  
 
-user	6m30.474s  
+user	6m31.315s  
 
-sys	0m38.940s  
+sys	0m40.601s
+
 ### postgreSQL  
 Najpierw należy stworzyć tabelę
 ````
@@ -33,6 +34,8 @@ Następnie wpisać
 COPY train FROM '/home/magdalena/Pobrane/Train_prepared.csv' DELIMITER ',' CSV;  
 ````
 czas: ok. 40 min
+
+![GitHub Logo](/images/importTrain.png)
 
 Dalsze podpunkty były zrobione w wersji mongo  2.8.0-rc0
 ## Zadanie 1b
@@ -47,19 +50,18 @@ SELECT COUNT(*) FROM train;
 
 6034195
 ##Zadanie 1c
+Skrypt
 ```
 var conn = new Mongo();
 var db = conn.getDB('dataBase');
 var dataBase = db.train.find();
-var count = 0;
 
 dataBase.forEach(function (record) {
 	if (typeof record.tags === 'string') {
-		var tableOfTags = record.tags.split(' ');
-
+		var table = record.tags.split(' ');
 		db.save.update(
 			{_id: record._id},
-			{$set: {tags: tableOfTags}}
+			{$set: {tags: table}}
 		)
 	}
 });
