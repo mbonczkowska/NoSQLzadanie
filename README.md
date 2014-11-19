@@ -4,6 +4,7 @@ Najpierw należy pozbyć się znaków nowej linii.
 ```
 cat Train.csv | tr "\n" " " | tr "\r" "\n" | head -n 6034196 > Train_prepared.csv
 ```
+Następnie wykonać import.
 ### mongo version 2.4.1
 ```
 time mongoimport -db train -c train -type csv --headerline -file Train_prepared.csv
