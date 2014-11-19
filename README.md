@@ -73,13 +73,16 @@ user	0m46.436s
 sys	0m3.719s  
 
 
-#Zadanie 1d
+##Zadanie 1d
 
-Dane to lista kodów pocztowych z lokalizacją i dzielnicą w Australii.
+Dane to lista kodów pocztowych z lokalizacją i dzielnicą w Australii.  
+Import:
 
 ````
 time mongoimport -d dataBase -c geoaus --type csv --file AustralianPostCodes.csv --headerline
 ```
+Czas:  
+
 real	0m1.332s  
 
 user	0m0.458s  
@@ -114,8 +117,8 @@ WriteResult({ "nRemoved" : 1 })
 ````
 Po ich usunięciu ilość rekordów wynosi: 16009  
 
-
-Nazwy dzielnic w promieniu 20 km dla których kody pocztowe się zmieniają
+### Zapytanie 1
+Nazwy dzielnic w promieniu 20 km 
 ````
 db.geoaus.find(    
 	{ location: 
