@@ -140,6 +140,7 @@ Wynik:
 { "suburb" : "KINTORE", "location" : { "type" : "Point", "coordinates" : [ 130.991347, -12.486851 ] } }
 { "suburb" : "KARAMA", "location" : { "type" : "Point", "coordinates" : [ 130.913672, -12.400091 ] } }
 ````
+[Mapka](/geojson/Zapytanie1.geojson)
 ### Zapytanie 2  
 
 Dzielnice w zasięgu wschodniego i zachodniego New Castle oraz The Junction
