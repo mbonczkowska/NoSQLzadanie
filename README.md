@@ -164,5 +164,5 @@ Wynik:
 
 
 ````
-[Mapka](/geojson/2.geojson)
+[Mapka](/geojson/3.geojson)
 
