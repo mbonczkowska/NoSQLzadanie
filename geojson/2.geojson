@@ -1,1 +1,35 @@
 
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPoint",
+        "coordinates": [102.0, 0.6]
+      },
+      "properties": {
+        "prop0": "value0"
+      }
+    },
+   
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+           [ 151.788039, -32.927881 ] , [ 151.761141, -32.924908 ], 
+			[ 151.759625, -32.937528 ], [ 151.788039, -32.927881 ]
+          ]
+        ]
+      },
+      "properties": {
+        "prop1": {
+          "this": "that"
+        },
+        "prop0": "value0"
+      }
+    }
+  ]
+}
