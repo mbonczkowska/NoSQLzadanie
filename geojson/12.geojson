@@ -1,20 +1,12 @@
-[
-  {
-    "{ \"loc\"":"{ \"loc\" ",
-    "{ \"type\"":" { \"type\" ",
-    "Point":"Point",
-    "[ 131.068332, -12.477758 ] } }":" [ 130.992541, -12.486152 ] } }"
-  },
-  {
-    "{ \"loc\"":"{ \"loc\" ",
-    "{ \"type\"":" { \"type\" ",
-    "Point":"Point",
-    "[ 131.068332, -12.477758 ] } }":" [ 130.991347, -12.486851 ] } }"
-  },
-  {
-    "{ \"loc\"":"{ \"loc\" ",
-    "{ \"type\"":" { \"type\" ",
-    "Point":"Point",
-    "[ 131.068332, -12.477758 ] } }":" [ 130.913672, -12.400091 ] } }"
-  }
-]
+var geojsonFeature = {
+    "type": "Feature",
+    "properties": {
+        "name": "Coors Field",
+        "amenity": "Baseball Stadium",
+        "popupContent": "This is where the Rockies play!"
+    },
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-104.99404, 39.75621]
+    }
+};
