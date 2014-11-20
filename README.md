@@ -164,7 +164,5 @@ Wynik:
 
 
 ````
-![GitHub Logo](/images/importAus.png)
-![GitHub Logo](/geojson/1.geojson)
-![GitHub Logo](/geojson/12.geojson)
+[Mapka](/geojson/2.geojson)
 
