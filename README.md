@@ -119,7 +119,7 @@ WriteResult({ "nRemoved" : 1 })
 Po ich usunięciu ilość rekordów wynosi: 16009  
 
 ### Zapytanie 1
-Nazwy dzielnic w promieniu 20 km 
+Dzielnice w promieniu 20 km od Ti Tree
 ````
 db.geoaus.find(    
 	{ location: 
@@ -132,12 +132,33 @@ db.geoaus.find(
 ````
 Wynik:
 ````
-{
-{ "suburb" : "TI TREE" }
-{ "suburb" : "ULURU" }
-{ "suburb" : "KINTORE" }
-{ "suburb" : "KARAMA" }
-}
+{ "suburb" : "TI TREE", "location" : { "type" : "Point", "coordinates" : [ 131.068332, -12.477758 ] } }
+{ "suburb" : "ULURU", "location" : { "type" : "Point", "coordinates" : [ 130.992541, -12.486152 ] } }
+{ "suburb" : "KINTORE", "location" : { "type" : "Point", "coordinates" : [ 130.991347, -12.486851 ] } }
+{ "suburb" : "KARAMA", "location" : { "type" : "Point", "coordinates" : [ 130.913672, -12.400091 ] } }
+````
+### Zapytanie 2  
+
+Dzielnice w zasięgu wschodniego i zachodniego New Castle oraz The Junction
+````
+db.geoaus.find(
+	{location:	
+		{$geoWithin:
+			{$polygon:[ [ 151.788039, -32.927881 ] , [ 151.761141, -32.924908 ], 
+			[ 151.759625, -32.937528 ], [ 151.788039, -32.927881 ]  ]}
+		} 
+	},{_id:0,postcode:0}
+)
+````
+Wynik:
+````
+{ "suburb" : "THE JUNCTION", "location" : { "type" : "Point", "coordinates" : [ 151.759625, -32.937528 ] } }
+{ "suburb" : "COOKS HILL", "location" : { "type" : "Point", "coordinates" : [ 151.769244, -32.93413 ] } }
+{ "suburb" : "NEWCASTLE EAST", "location" : { "type" : "Point", "coordinates" : [ 151.788039, -32.927881 ] } }
+{ "suburb" : "THE HILL", "location" : { "type" : "Point", "coordinates" : [ 151.777382, -32.929808 ] } }
+{ "suburb" : "NEWCASTLE WEST", "location" : { "type" : "Point", "coordinates" : [ 151.761141, -32.924908 ] } }
+
+
 ````
 ![GitHub Logo](/images/importAus.png)
 ![GitHub Logo](/geojson/1.geojson)
