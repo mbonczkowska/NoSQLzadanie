@@ -1,4 +1,23 @@
-{ "suburb" : "TI TREE", "loc" : { "type" : "Point", "coordinates" : [ 131.068332, -12.477758 ] } }
-{ "suburb" : "ULURU", "loc" : { "type" : "Point", "coordinates" : [ 130.992541, -12.486152 ] } }
-{ "suburb" : "KINTORE", "loc" : { "type" : "Point", "coordinates" : [ 130.991347, -12.486851 ] } }
-{ "suburb" : "KARAMA", "loc" : { "type" : "Point", "coordinates" : [ 130.913672, -12.400091 ] } }
+[
+  {
+    "{ \"suburb\"":"{ \"suburb\" ",
+    "TI TREE":"ULURU",
+    "{ \"type\"":" { \"type\" ",
+    "Point":"Point",
+    "[ 131.068332, -12.477758 ] } }":" [ 130.992541, -12.486152 ] } }"
+  },
+  {
+    "{ \"suburb\"":"{ \"suburb\" ",
+    "TI TREE":"KINTORE",
+    "{ \"type\"":" { \"type\" ",
+    "Point":"Point",
+    "[ 131.068332, -12.477758 ] } }":" [ 130.991347, -12.486851 ] } }"
+  },
+  {
+    "{ \"suburb\"":"{ \"suburb\" ",
+    "TI TREE":"KARAMA",
+    "{ \"type\"":" { \"type\" ",
+    "Point":"Point",
+    "[ 131.068332, -12.477758 ] } }":" [ 130.913672, -12.400091 ] } }"
+  }
+]
