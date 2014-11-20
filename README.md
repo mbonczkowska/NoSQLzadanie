@@ -127,7 +127,7 @@ db.geoaus.find(
 			{$geometry:
 				{ "type" : "Point","coordinates" : [ 131.068332, -12.477758 ] },$maxDistance:20000                         }                   
 		}             
-	},{_id:0,location:0,postcode:0}
+	},{_id:0,postcode:0}
 )
 ````
 Wynik:
@@ -140,4 +140,6 @@ Wynik:
 }
 ````
 ![GitHub Logo](/images/importAus.png)
+![GitHub Logo](/geojson/1.geojson)
+![GitHub Logo](/geojson/12.geojson)
 
