@@ -1,4 +1,4 @@
-{ "location" : { "type" : "Point", "coordinates" : [ 131.068332, -12.477758 ] } }
-{ "location" : { "type" : "Point", "coordinates" : [ 130.992541, -12.486152 ] } }
-{ "location" : { "type" : "Point", "coordinates" : [ 130.991347, -12.486851 ] } }
-{ "location" : { "type" : "Point", "coordinates" : [ 130.913672, -12.400091 ] } }
+{ "loc" : { "type" : "Point", "coordinates" : [ 131.068332, -12.477758 ] } }
+{ "loc" : { "type" : "Point", "coordinates" : [ 130.992541, -12.486152 ] } }
+{ "loc" : { "type" : "Point", "coordinates" : [ 130.991347, -12.486851 ] } }
+{ "loc" : { "type" : "Point", "coordinates" : [ 130.913672, -12.400091 ] } }
