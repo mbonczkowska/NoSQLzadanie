@@ -71,7 +71,10 @@ real	3m25.169s
 
 user	0m46.436s  
 
-sys	0m3.719s  
+sys	0m3.719s    
+
+
+![GitHub Logo](/images/arrayTrain.png)   
 
 
 ##Zadanie 1d
