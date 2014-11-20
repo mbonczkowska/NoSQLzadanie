@@ -1,0 +1,4 @@
+{ "suburb" : "TI TREE", "location" : { "type" : "Point", "coordinates" : [ 131.068332, -12.477758 ] } }
+{ "suburb" : "ULURU", "location" : { "type" : "Point", "coordinates" : [ 130.992541, -12.486152 ] } }
+{ "suburb" : "KINTORE", "location" : { "type" : "Point", "coordinates" : [ 130.991347, -12.486851 ] } }
+{ "suburb" : "KARAMA", "location" : { "type" : "Point", "coordinates" : [ 130.913672, -12.400091 ] } }
