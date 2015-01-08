@@ -28,6 +28,7 @@ r = function(key, values) {
  
 };
 ````
+MapReduce:
 ````
 db.wordList.mapReduce(m,  r,
   {
