@@ -62,4 +62,13 @@ real	10m18.912s
 user	7m50.329s
 sys	0m21.665s
 ````
+time mongoimport -d wiki -c wiki --type tsv --file plwiki.csv --headerline --ignoreBlanks
+
+
+````
+real	50m11.950s
+user	3m34.252s
+sys	0m43.029s
+````
+
 
