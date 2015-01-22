@@ -50,3 +50,16 @@ Wynik:
         "ok" : 1
 }
 ````
+## Zadanie 3 b  
+
+Po kilku nie udanych próbach skorzystałam z XML2CSV-Generic-Converter
+````
+ time java -jar XML2CSVGenericConverter_V1.0.0.jar -v -i plwiki.xml -o /home/magdalena/Pobrane/nosql/
+````
+Czas:
+````
+real	10m18.912s
+user	7m50.329s
+sys	0m21.665s
+````
+
