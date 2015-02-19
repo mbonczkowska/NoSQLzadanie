@@ -1,5 +1,14 @@
 ## Zadanie 3  
 
+Specyfikacja techniczna komputera:
+
+|                       |                                  |
+|-----------------------|---------------------------------|
+| System operacyjny     | Linux Ubuntu 14.04 (64-bitowy) |
+| Procesor              | Intel i5-3230M                  |
+| Ilość Ram             | 8 GB                            |
+
+
 Najpierw należy zaimportować dokument tekstowy to bazy mongo
 ### mongo version v2.6.6
 ```
