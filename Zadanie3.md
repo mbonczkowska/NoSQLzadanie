@@ -1,8 +1,8 @@
 ## Zadanie 3  
 
 
+Specyfikacja techniczna komputera:  
 
-|Specyfikacja techniczna komputera:                            |
 |-----------------------|---------------------------------|
 | System operacyjny     | Linux Ubuntu 14.04 (64-bitowy) |
 | Procesor              | Intel i5-3230M                  |
