@@ -1,8 +1,8 @@
 ## Zadanie 3  
 
-Specyfikacja techniczna komputera:
 
-|                       |                                  |
+
+|Specyfikacja techniczna komputera:                            |
 |-----------------------|---------------------------------|
 | System operacyjny     | Linux Ubuntu 14.04 (64-bitowy) |
 | Procesor              | Intel i5-3230M                  |
@@ -10,10 +10,14 @@ Specyfikacja techniczna komputera:
 
 
 Najpierw należy zaimportować dokument tekstowy to bazy mongo
+### mongo version 3.0.0-rc8
+
+
 ### mongo version v2.6.6
 ```
  time mongoimport  -db mapReduce -c wordList --file word_text.txt -f "word"
  ```
+
  Czas przesyłania: 
  ```
 real    0m0.796s
