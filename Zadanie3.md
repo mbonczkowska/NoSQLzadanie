@@ -32,6 +32,8 @@ sys     0m0.031s
   emit( Array.sum(this.word.split("").sort()), this.word );  
   
 };
+
+
 ```
 Funkcja reduce:
 ```js
@@ -41,6 +43,11 @@ r = function(key, values) {
   
  
 };
+
+ r = function(key,values){var result = {}; for(i=0;i<values.length;i++){if(type
+of result[i]=="undefined") result[i] = ""; result[i]=result[i]+ values[i];}var i
+=0; for(var k in result){if(result.hasOwnProperty(k)){i++;}} values["count"]=i;
+return result;};
 ```
 MapReduce:
 ```js
