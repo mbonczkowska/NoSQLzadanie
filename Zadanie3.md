@@ -83,9 +83,8 @@ Przykładowe wyniki:
 { "_id" : "aabgin", "value" : 1 }
 { "_id" : "aabgir", "value" : 1 }
 ```
-##Zapytania:      
-
- ###Słowa, które mają po jednym anagramie
+##Zapytania:  
+###Słowa, które mają po jednym anagramie
  ```
 db.reduce.find({value:1}).count()
  ```
