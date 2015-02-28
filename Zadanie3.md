@@ -27,27 +27,18 @@ sys     0m0.031s
 ```
  Funkcja map:
  ```js
- m = function() {  
- 
-  emit( Array.sum(this.word.split("").sort()), this.word );  
-  
-};
 
+ m = function() {    
+     emit( Array.sum(this.word.split("").sort()), 1 );    
+};
 
 ```
 Funkcja reduce:
 ```js
-r = function(key, values) {  
-
-  return values.toString();  
-  
- 
+ r = function(key, values) {   
+    return Array.sum(values); 
 };
 
- r = function(key,values){var result = {}; for(i=0;i<values.length;i++){if(type
-of result[i]=="undefined") result[i] = ""; result[i]=result[i]+ values[i];}var i
-=0; for(var k in result){if(result.hasOwnProperty(k)){i++;}} values["count"]=i;
-return result;};
 ```
 MapReduce:
 ```js
@@ -60,17 +51,51 @@ db.wordList.mapReduce(m,  r,
 Wynik: 
 ```
 {
-        "result" : "reduce",
-        "timeMillis" : 808,
+        "result" : "resp",
+        "timeMillis" : 423,
         "counts" : {
-                "input" : 16398,
-                "emit" : 16398,
-                "reduce" : 7853,
+                "input" : 8199,
+                "emit" : 8199,
+                "reduce" : 914,
                 "output" : 7011
         },
         "ok" : 1
 }
 ```
+Przykładowe wyniki:
+```
+{ "_id" : "aabcrs", "value" : 1 }
+{ "_id" : "aabcsu", "value" : 1 }
+{ "_id" : "aabder", "value" : 1 }
+{ "_id" : "aabdes", "value" : 1 }
+{ "_id" : "aabdet", "value" : 1 }
+{ "_id" : "aabdll", "value" : 1 }
+{ "_id" : "aabdlm", "value" : 1 }
+{ "_id" : "aabdmn", "value" : 1 }
+{ "_id" : "aabdor", "value" : 2 }
+{ "_id" : "aabegt", "value" : 1 }
+{ "_id" : "aabelr", "value" : 1 }
+{ "_id" : "aabelt", "value" : 1 }
+{ "_id" : "aabelz", "value" : 1 }
+{ "_id" : "aabemo", "value" : 1 }
+{ "_id" : "aabess", "value" : 1 }
+{ "_id" : "aabest", "value" : 1 }
+{ "_id" : "aabggr", "value" : 1 }
+{ "_id" : "aabggs", "value" : 1 }
+{ "_id" : "aabgin", "value" : 1 }
+{ "_id" : "aabgir", "value" : 1 }
+```
+Zapytania:  
+Słowa, które mają najwięcej anagramów  
+```
+ db.reduce.find().sort({value: -1})
+ ```
+ ![GitHub Logo](/images/pbar1.png)  
+  
+Słowa, w których pierwsza posortowana litera to "o"
+````
+db.reduce.find({_id: /^o/}).sort({value: -1})
+````
 ## Zadanie 3 b  
 
 Po kilku nie udanych próbach skorzystałam z XML2CSV-Generic-Converter
