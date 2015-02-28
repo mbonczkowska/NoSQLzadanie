@@ -13,8 +13,6 @@ Specyfikacja techniczna komputera:
 Najpierw należy zaimportować dokument tekstowy to bazy mongo
 ### mongo version 3.0.0-rc8
 
-
-### mongo version v2.6.6
 ```
  time mongoimport  -db mapReduce -c wordList --file word_text.txt -f "word"
  ```
@@ -86,7 +84,7 @@ Przykładowe wyniki:
 { "_id" : "aabgir", "value" : 1 }
 ```
 ###Zapytania:    
- Słowa, które mają po jednym anagramie
+ 1. Słowa, które mają po jednym anagramie
  ```
 db.reduce.find({value:1}).count()
  ```
@@ -94,20 +92,20 @@ db.reduce.find({value:1}).count()
  ```
  6097
  ```
-Słowa, które mają najwięcej anagramów  
+2. Słowa, które mają najwięcej anagramów  
 ```
  db.reduce.find().sort({value: -1})
  ```
 
  ![GitHub Logo](/images/pbar1.png)  
   
-Słowa, w których pierwsza posortowana litera to "o"
+3. Słowa, w których pierwsza posortowana litera to "o"
 ````
 db.reduce.find({_id: /^o/}).sort({value: -1})
 ````
 ![GitHub Logo](/images/pbar2.png)      
 
-Ilość słów kończących się na dane litery  
+4. Ilość słów kończących się na dane litery  
 ```
 db.reduce.find({_id: /a$/}).count()
 db.reduce.find({_id: /b$/}).count()
