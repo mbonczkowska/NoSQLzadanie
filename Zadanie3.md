@@ -85,17 +85,36 @@ Przykładowe wyniki:
 { "_id" : "aabgin", "value" : 1 }
 { "_id" : "aabgir", "value" : 1 }
 ```
-Zapytania:  
+###Zapytania:    
+ Słowa, które mają po jednym anagramie
+ ```
+db.reduce.find({value:1}).count()
+ ```
+ Wynik:
+ ```
+ 6097
+ ```
 Słowa, które mają najwięcej anagramów  
 ```
  db.reduce.find().sort({value: -1})
  ```
+
  ![GitHub Logo](/images/pbar1.png)  
   
 Słowa, w których pierwsza posortowana litera to "o"
 ````
 db.reduce.find({_id: /^o/}).sort({value: -1})
 ````
+![GitHub Logo](/images/pbar2.png)      
+
+Ilość słów kończących się na dane litery  
+```
+db.reduce.find({_id: /a$/}).count()
+db.reduce.find({_id: /b$/}).count()
+db.reduce.find({_id: /c$/}).count()
+itd.
+```
+![GitHub Logo](/images/pbar3.png)   
 ## Zadanie 3 b  
 
 Po kilku nie udanych próbach skorzystałam z XML2CSV-Generic-Converter
