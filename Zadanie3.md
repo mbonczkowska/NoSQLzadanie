@@ -115,8 +115,33 @@ itd.
 ![GitHub Logo](/images/pbar3.png)   
 
 ## Zadanie 3  
-Korzystając ze skryptu link[http://wbzyl.inf.ug.edu.pl/nosql/db/mongodb/dostojewski.rb] przeniosłam książkę 
-"Rozważna i romantyczna" Jane Austen do bazy mongo.
+Korzystając ze skryptu [link](http://wbzyl.inf.ug.edu.pl/nosql/db/mongodb/dostojewski.rb) przeniosłam książkę 
+"Rozważna i romantyczna" Jane Austen do bazy mongo.  
+
+ Funkcja map:
+ ```js
+
+ m = function() {    
+     emit( Array.sum(this.word.split("")), 1 );    
+};
+
+```
+Funkcja reduce:
+```js
+ r = function(key, values) {   
+    return Array.sum(values); 
+};
+
+```
+MapReduce:
+```js
+db.austen.mapReduce(m,  r,
+  {
+    out: "reduce"
+  }
+);
+```
+
 
 
 
