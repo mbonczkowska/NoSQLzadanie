@@ -113,6 +113,13 @@ db.reduce.find({_id: /c$/}).count()
 itd.
 ```
 ![GitHub Logo](/images/pbar3.png)   
+
+## Zadanie 3  
+Korzystając ze skryptu link[http://wbzyl.inf.ug.edu.pl/nosql/db/mongodb/dostojewski.rb] przeniosłam książkę 
+"Rozważna i romantyczna" Jane Austen do bazy mongo.
+
+
+
 ## Zadanie 3 b  
 
 Po kilku nie udanych próbach skorzystałam z XML2CSV-Generic-Converter
