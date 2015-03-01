@@ -209,3 +209,5 @@ var reduce = function(key, value){
 
 db.wiki.mapReduce( map, reduce,  {out: 'word_count'});
 ```
+###Słowa pojawiające się najczęściej
+![GitHub Logo](/images/wiki.png) 
