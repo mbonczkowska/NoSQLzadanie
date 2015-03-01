@@ -13,12 +13,12 @@ Specyfikacja techniczna komputera:
 Najpierw należy zaimportować dokument tekstowy to bazy mongo
 ### mongo version 3.0.0-rc8
 
-```
+```sh
  time mongoimport  -db mapReduce -c wordList --file word_text.txt -f "word"
  ```
 
  Czas przesyłania: 
- ```
+ ```sh
 real    0m0.796s
 user    0m0.000s
 sys     0m0.031s
@@ -47,7 +47,7 @@ db.wordList.mapReduce(m,  r,
 );
 ```
 Wynik: 
-```
+```sh
 {
         "result" : "resp",
         "timeMillis" : 423,
@@ -61,7 +61,7 @@ Wynik:
 }
 ```
 Przykładowe wyniki:
-```
+```sh
 { "_id" : "aabcrs", "value" : 1 }
 { "_id" : "aabcsu", "value" : 1 }
 { "_id" : "aabder", "value" : 1 }
@@ -85,7 +85,7 @@ Przykładowe wyniki:
 ```
 ##Zapytania:  
 ###Słowa, które mają po jednym anagramie
- ```
+ ```sh
 db.reduce.find({value:1}).count()
  ```
  Wynik:
@@ -93,20 +93,20 @@ db.reduce.find({value:1}).count()
  6097
  ```
 ###Słowa, które mają najwięcej anagramów  
-```
+```sh
  db.reduce.find().sort({value: -1})
  ```
 
  ![GitHub Logo](/images/pbar1.png)  
   
 ###Słowa, w których pierwsza posortowana litera to "o"
-````
+```sh
 db.reduce.find({_id: /^o/}).sort({value: -1})
-````
+```
 ![GitHub Logo](/images/pbar2.png)      
 
 ###Ilość słów kończących się na dane litery  
-```
+```sh
 db.reduce.find({_id: /a$/}).count()
 db.reduce.find({_id: /b$/}).count()
 db.reduce.find({_id: /c$/}).count()
@@ -142,7 +142,7 @@ db.austen.mapReduce(m,  r,
 );
 ```
 Ilość rekordów po redukcji
-```
+```sh
 db.reduce.count()
 ```
 Wynik:
@@ -151,7 +151,7 @@ Wynik:
 ```
 ###Zapytania:
 ###Słowa występujące tylko raz
- ```
+ ```sh
 db.reduce.find({value:1}).count()
  ```
  Wynik:
@@ -159,37 +159,37 @@ db.reduce.find({value:1}).count()
  2547
  ```
 ###Słowa pojawiające się najczęściej w książce
-```
+```sh
  db.reduce.find().sort({value: -1})
  ```
 
  ![GitHub Logo](/images/austen1.png) 
  
 ### Słowa, które mają powyżej 15 znaków
-```
+```sh
 db.reduce.find({ $where:"this._id.length > 15"})
 ```
  ![GitHub Logo](/images/austen2.png) 
 ## Zadanie 3 b  
 
 Po kilku nie udanych próbach skorzystałam z XML2CSV-Generic-Converter
-```
+```sh
  time java -jar XML2CSVGenericConverter_V1.0.0.jar -v -i plwiki.xml -o /home/magdalena/Pobrane/nosql/
 ```
 Czas:
-```
+```sh
 real	10m18.912s
 user	7m50.329s
 sys	0m21.665s
 ```
 Następnie import do bazy mongo:
-```
+```sh
 time mongoimport -d wiki -c wiki --type tsv --file plwiki.csv --headerline --ignoreBlanks
 ```
 
 Czas:
 
-```
+```sh
 real	50m11.950s
 user	3m34.252s
 sys	0m43.029s
