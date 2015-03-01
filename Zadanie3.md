@@ -141,10 +141,35 @@ db.austen.mapReduce(m,  r,
   }
 );
 ```
+Ilość rekordów po redukcji
+```
+db.reduce.count()
+```
+Wynik:
+```
+6119
+```
+###Zapytania:
+###Słowa występujące tylko raz
+ ```
+db.reduce.find({value:1}).count()
+ ```
+ Wynik:
+ ```
+ 2547
+ ```
+###Słowa pojawiające się najczęściej w książce
+```
+ db.reduce.find().sort({value: -1})
+ ```
 
-
-
-
+ ![GitHub Logo](/images/austen1.png) 
+ 
+### Słowa, które mają powyżej 15 znaków
+```
+db.reduce.find({ $where:"this._id.length > 15"})
+```
+ ![GitHub Logo](/images/austen2.png) 
 ## Zadanie 3 b  
 
 Po kilku nie udanych próbach skorzystałam z XML2CSV-Generic-Converter
