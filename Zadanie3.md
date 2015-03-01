@@ -8,7 +8,7 @@ Specyfikacja techniczna komputera:
 | System operacyjny     | Linux Ubuntu 14.04 (64-bitowy) |
 | Procesor              | Intel i5-3230M                  |
 | Ilość Ram             | 8 GB                            |
-
+|Ilość rdzeni           | 2                               |
 
 Najpierw należy zaimportować dokument tekstowy to bazy mongo
 ### mongo version 3.0.0-rc8
